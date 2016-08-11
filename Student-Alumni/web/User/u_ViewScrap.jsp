@@ -33,7 +33,6 @@
 <body>
 	<div id="header">
 		<jsp:include page="u_header.jsp"></jsp:include>
-		<br>
 	</div>
 
 

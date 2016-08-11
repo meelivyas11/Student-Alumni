@@ -17,32 +17,30 @@
 <body>
 		<div id="header">
 		<div id="logo" align="center">
-			<h1>
-				SankalChand Patel College Of Engg. 
-			</h1>
+			<h1>SankalChand Patel College Of Engg.</h1>
 		</div>
 		<div id="Student-Alumni">
 			<h2>Student-Alumni</h2>
 		</div>
 	</div>
 		<div id="TopMenuOptions">
-			<br> &nbsp; <a class="Lhomeheader" href="/Student-Alumni/User/user_home.jsp"> Home</a>
-		&nbsp;&nbsp;|&nbsp;&nbsp; 
-		<a href="/Student-Alumni/User/Search_main.jsp" class="Lhomeheader">Search </a>
-		&nbsp;&nbsp;|&nbsp;&nbsp;
-		<%
-			String grno = (String) session.getAttribute("grno");
-			String message = null;
-			if (grno != null && grno.length() != 0) {
-				message = "Logout";
-			} else {
-				message = "Login";
-			}
-			String url = response.encodeURL("/Student-Alumni/" + message);
-		%>
-		<a class="Lhomeheader" href=<%=url%>><%=message%> </a>
+			<a class="Lhomeheader" href="/Student-Alumni/User/user_home.jsp"> Home</a>
+			&nbsp;&nbsp;|&nbsp;&nbsp; 
+			<a href="/Student-Alumni/User/u_SelectSearchOptions.jsp" class="Lhomeheader">Search</a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;
+			<%
+				String grno = (String) session.getAttribute("grno");
+				String message = null;
+				if (grno != null && grno.length() != 0) {
+					message = "Logout";
+				} else {
+					message = "Login";
+				}
+				String url = response.encodeURL("/Student-Alumni/" + message);
+			%>
+			<a class="Lhomeheader" href=<%=url%>><%=message%> </a>
 		</div>
-		<br/><br/><br/>
+		<br><br>
 </body>
 </html>
 
