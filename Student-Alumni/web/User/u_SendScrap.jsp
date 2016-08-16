@@ -37,7 +37,7 @@
 	        </td>
 	        <td width="85%" height="85%" valign="top" align="left">
 			<br><br> <br>
-	            <form action="/Student-Alumni/User/u_MessageMany.jsp">
+	            <form action="u_SendMessage">
 					 <table align="center" cellpadding="5" class="ScrapSelectTable">
 					 	<tr><td>(Separate The Email-Address By Comma(,))</td></tr>
 					 	<tr><td>TO : <input type="text" name="Destination" value=""/></td></tr>

@@ -139,12 +139,8 @@
 		                s1.setAttribute("current_row_no", current_row_no);
 		                s1.setAttribute("counter", i);
 		            %>
-		            <tr>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		            <a href="/Student-Alumni/User/u_ViewAllFriends.jsp"> View All >> </a></tr>
 		        </table>
+		        	<h4 align="right"><a href="/Student-Alumni/User/u_ViewAllFriends.jsp"> View All >> </a></h4>
         		<%                
         			break;
         		  } else {

@@ -31,12 +31,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Student</title>
-
-<script type="text/javascript">
-	function addfriend() {
-		//  document.forms.submit();
-	}
-</script>
 </head>
 
 <body>
@@ -147,12 +141,9 @@
 										<center><img src="<%=Photo%>" width="150" height="100" alt="<%=sgrno%>" /></center>
 										<center> <c:out value="<%=FirstName%>" /> . <c:out value="<%=LastName%>" /></center>
 										<center><c:out value="<%=Company%>" /></center>
-										 <!--<a href="addfriend" onclick="addfriend()">Add Friend</a>
-										 <a href="send_scrap?req_grno">Send Scrap</a>
-										 <input type="submit" value="AddFriend" name="AddFriend" />	-->
 			
 										<br/>
-										<form action="/Student-Alumni/User/addfriend" method="POST">
+										<form action="u_Addfriend" method="POST">
 											<input type="hidden" name="sgrno" value="<%=sgrno%>">
 											<center><button name="Addfriend" value="<%=sgrno%>" onclick="submit()">Add Friend</button></center>
 										</form>

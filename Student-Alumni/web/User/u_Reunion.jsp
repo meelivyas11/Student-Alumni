@@ -42,9 +42,10 @@
 				<td width="85%" height="100%">
 					<%
 						DataSource ds = DBUtils.getOracleDataSource();
+						String query = DBUtils.GET_ALL_REUNION;
 					%> 
 					<sql:setDataSource var="db" dataSource="<%=ds%>" /> 
-						<sql:query var="query1" dataSource="${db}" sql="select * from REUNION"> </sql:query> 
+						<sql:query var="query1" dataSource="${db}" sql="<%=query%>"> </sql:query> 
 					<center><h2>Reunion Details</h2></center>
 					<table width=60% border=3 align="center">
 						<thead>

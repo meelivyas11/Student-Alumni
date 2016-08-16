@@ -5,6 +5,7 @@
     Author     : Meeli Vyas
 --%>
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="com.studentAlumni.DataProvider.DBUtils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -46,7 +47,7 @@
 				<td width="85%" height="85%" valign="top" align="right">
 					<%
 						HttpSession s1 = request.getSession();
-						Statement st = null, st2 = null;
+						PreparedStatement ps = null, ps2 = null;
 						Connection con = null, con2 = null;
 						ResultSet rs = null, rs2 = null;
 						int temp = (Integer) s1.getAttribute("counter");
@@ -55,12 +56,13 @@
 
 						String grno = (String) s1.getAttribute("grno");
 
-						String query = "Select FROM_GRNO,TO_GRNO from FRIENDS where TO_GRNO='" + grno + "' or FROM_GRNO='" + grno + "' and STATUS='ACTIVE'";
-
 						try {
 							con = DBUtils.getConnectionObj();
-							st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-							rs = st.executeQuery(query);
+							ps = con.prepareStatement(DBUtils.GET_FRIENDS_FOR_GRNO, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+							ps.setString(1, grno);
+							ps.setString(2, grno);
+							rs = ps.executeQuery();
+							
 							int row = (Integer) s1.getAttribute("current_row_no");
 							rs.absolute(row - 1);
 							int hell = 0;
@@ -87,8 +89,10 @@
 										}
 
 										con2 = DBUtils.getConnectionObj();
-										st2 = con2.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-										rs2 = st2.executeQuery("Select * from PROFILE where GRNO='" + Friend_grno + "'");
+										ps2 = con2.prepareStatement(DBUtils.GET_PROFILE_FROM_GRNO, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+										ps2.setString(1, Friend_grno);
+										rs2 = ps2.executeQuery();
+
 										if (rs2.next()) {
 											String FirstName = rs2.getString("FIRSTNAME");
 											String LastName = rs2.getString("LASTNAME");
@@ -125,10 +129,10 @@
 						finally {
 					 		try {
 					 			if (!rs.isClosed()) rs.close();
-					 			if (!st.isClosed()) st.close();
+					 			if (!ps.isClosed()) ps.close();
 					 			if (!con.isClosed()) con.close();
 					 			if (!rs2.isClosed()) rs2.close();
-					 			if (!st2.isClosed()) st2.close();
+					 			if (!ps2.isClosed()) ps2.close();
 					 			if (!con2.isClosed()) con2.close();
 					 		} catch (Exception e) {
 					 			log(e.getMessage());

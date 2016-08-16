@@ -4,6 +4,7 @@
     Author     : Meeli Vyas
 --%>
 
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="com.studentAlumni.DataProvider.DBUtils"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
@@ -43,17 +44,18 @@
         <td width="85%" height="85%" valign="top" align="left">
             <%
 	        HttpSession s1 = request.getSession();
-	        Statement st = null, st2 = null;
+	        PreparedStatement ps = null, ps2 = null;
 	        Connection con = null, con2 = null;
 	        ResultSet rs = null, rs2 = null;
 	        String grno = (String) s1.getAttribute("grno");
-	        String query = "Select * from SCRAP where RGRNO='" + grno + "'";
-
+			
     	    try {
 	            int times;
 	            con = DBUtils.getConnectionObj();
-	            st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-	            rs = st.executeQuery(query);
+	            ps = con.prepareStatement(DBUtils.GET_SCRAP_BY_RGRNO,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+				ps.setString(1, grno);
+	            rs = ps.executeQuery();
+	            
 	            int row = (Integer) s1.getAttribute("current_row_no");
 	            rs.absolute(row);
 	            times = (Integer) s1.getAttribute("totalrows");
@@ -67,8 +69,11 @@
                             String Sgrno = rs.getString("SGRNO");
                             String Message = rs.getString("MESSAGE");
                             con2 = DBUtils.getConnectionObj();
-                            st2 = con2.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
-                            rs2 = st2.executeQuery("Select * from PROFILE where EMAILADDRESS='" + Sender_email + "'");
+                            
+                            ps2 = con2.prepareStatement(DBUtils.GET_PROFILE_BY_EMAILADDRESS, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+                            ps2.setString(1, Sender_email);
+                            rs2 = ps2.executeQuery();
+                            
                             if (rs2.next()) {
                                 String FirstName = rs2.getString("FIRSTNAME");
                                 String LastName = rs2.getString("LASTNAME");
@@ -84,17 +89,19 @@
 							         <%=Message%>
 							      </td>   
 							      <td width="55%" class="C2">
-							            <form action="/Student-Alumni/User/Scrap_del.jsp">
+							            <form action="u_DeleteMessage" method="post">
 							          		<center>
 							          			<input type="hidden" name="Sgrno" value="<%= Sgrno%>">
+							          			<input type="hidden" name="Message" value="<%=Message%>">
 							              		<button name="Sgrno" value="<%=Sgrno%>" onclick="submit()">Delete</button>
 							              	</center>
 							             </form>
 								  </td>
 							      <td width="55%" class="C2">
-							         	 <form  action="/Student-Alumni/User/Scrap_reply.jsp">
+							         	 <form  action="/Student-Alumni/User/u_ScrapReply.jsp">
 							            	<center>
 								              	<input type="hidden" name="Sgrno" value="<%= Sgrno%>">
+								              	<input	type="hidden" name="Semail" value="<%=Sender_email%>">
 							           		    <button name="Sgrno" value="<%=Sgrno%>" onclick="submit()">Reply</button>
 							           		</center>
 						           		</form>
@@ -103,7 +110,7 @@
 			                   <%
                             }
                             if (!rs2.isClosed()) rs2.close();
-                            if (!st2.isClosed()) st2.close();
+                            if (!ps2.isClosed()) ps2.close();
                             if (!con2.isClosed()) con2.close();
                         }
                     %>
@@ -114,7 +121,7 @@
     	    finally {
 	            try {
 	                if (!rs.isClosed()) rs.close();
-	                if (!st.isClosed()) st.close();
+	                if (!ps.isClosed()) ps.close();
 	                if (!con.isClosed()) con.close();
 	            } catch (Exception e) {
                 log(e.getMessage());

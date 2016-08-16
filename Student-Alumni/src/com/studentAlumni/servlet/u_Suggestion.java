@@ -50,7 +50,7 @@ public class u_Suggestion extends HttpServlet {
 			String suggestion = request.getParameter("suggestion");
 
 			cn = DBUtils.getConnectionObj();
-			ps = cn.prepareStatement("Insert into SUGGESTION (FIRSTNAME,LASTNAME,GRNO,SUGGESTION) values(?,?,?,?)");
+			ps = cn.prepareStatement(DBUtils.INSERT_SUGGESTION);
 
 			ps.setString(1, firstname);
 			ps.setString(2, lastname);

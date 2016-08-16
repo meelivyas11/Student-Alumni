@@ -73,10 +73,10 @@
 										}
 
 										if (sgrno != "" && suserid == "") {
-											query = "Select * from profile where GRNO like'" + sgrno + "'and USERID like '%'";
+											query = "Select * from PROFILE where GRNO like'" + sgrno + "'and USERID like '%'";
 										}
 										if (sgrno != "" && suserid != "") {
-											query = "Select * from profile where GRNO like '" + sgrno + "'and USERID like '" + suserid 	+ "'";
+											query = "Select * from PROFILE where GRNO like '" + sgrno + "'and USERID like '" + suserid 	+ "'";
 										}
 									}
 						
@@ -100,32 +100,32 @@
 											out.print("Enter the values");
 										}
 										if (sfname == "" && slname == "" && semail != "") {
-											query = "Select * from profile where FIRSTNAME like'%' and LASTNAME like '%' and EMAILADDRESS like '"
+											query = "Select * from PROFILE where FIRSTNAME like'%' and LASTNAME like '%' and EMAILADDRESS like '"
 													+ semail + "'";
 										}
 										if (sfname == "" && slname != "" && semail == "") {
-											query = "Select * from profile where FIRSTNAME like'%' and LASTNAME like '" + slname
+											query = "Select * from PROFILE where FIRSTNAME like'%' and LASTNAME like '" + slname
 													+ "' and EMAILADDRESS like '%'";
 										}
 										if (sfname == "" && slname != "" && semail != "") {
-											query = "Select * from profile where FIRSTNAME like'%' and LASTNAME like '" + slname
+											query = "Select * from PROFILE where FIRSTNAME like'%' and LASTNAME like '" + slname
 													+ "' and EMAILADDRESS like '" + semail + "'";
 										}
 
 										if (sfname != "" && slname == "" && semail == "") {
-											query = "Select * from profile where FIRSTNAME like '" + sfname
+											query = "Select * from PROFILE where FIRSTNAME like '" + sfname
 													+ "' and LASTNAME like '%' and EMAILADDRESS like '%'";
 										}
 										if (sfname != "" && slname == "" && semail != "") {
-											query = "Select * from profile where FIRSTNAME like'" + sfname
+											query = "Select * from PROFILE where FIRSTNAME like'" + sfname
 													+ "' and LASTNAME like '%' and EMAILADDRESS like '" + semail + "'";
 										}
 										if (sfname != "" && slname != "" && semail == "") {
-											query = "Select * from profile where FIRSTNAME like'" + sfname + "' and LASTNAME like '"
+											query = "Select * from PROFILE where FIRSTNAME like'" + sfname + "' and LASTNAME like '"
 													+ slname + "' and EMAILADDRESS like '%'";
 										}
 										if (sfname != "" && slname != "" && semail != "") {
-											query = "Select * from profile where FIRSTNAME like'" + sfname + "' and LASTNAME like '"
+											query = "Select * from PROFILE where FIRSTNAME like'" + sfname + "' and LASTNAME like '"
 													+ slname + "' and EMAILADDRESS like '" + semail + "'";
 										}
 
@@ -152,32 +152,32 @@
 											out.print("Enter the values");
 										}
 										if (sYOP == "" && sbranch == "" && sdegree != "") {
-											query = "Select * from profile where YEAROFPASSING like'%' and BRANCH like '%' and DEGREE like '"
+											query = "Select * from PROFILE where YEAROFPASSING like'%' and BRANCH like '%' and DEGREE like '"
 													+ sdegree + "'";
 										}
 										if (sYOP == "" && sbranch != "" && sdegree == "") {
-											query = "Select * from profile where YEAROFPASSING like'%' and BRANCH like '" + sbranch
+											query = "Select * from PROFILE where YEAROFPASSING like'%' and BRANCH like '" + sbranch
 													+ "' and DEGREE like '%'";
 										}
 										if (sYOP == "" && sbranch != "" && sdegree != "") {
-											query = "Select * from profile where YEAROFPASSING like'%' and BRANCH like '" + sbranch
+											query = "Select * from PROFILE where YEAROFPASSING like'%' and BRANCH like '" + sbranch
 													+ "' and DEGREE like '" + sdegree + "'";
 										}
 
 										if (sYOP != "" && sbranch == "" && sdegree == "") {
-											query = "Select * from profile where YEAROFPASSING like '" + sYOP
+											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP
 													+ "' and BRANCH like '%' and DEGREE like '%'";
 										}
 										if (sYOP != "" && sbranch == "" && sdegree != "") {
-											query = "Select * from profile where YEAROFPASSING like '" + sYOP
+											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP
 													+ "' and BRANCH like '%' and DEGREE like '" + sdegree + "'";
 										}
 										if (sYOP != "" && sbranch != "" && sdegree == "") {
-											query = "Select * from profile where YEAROFPASSING like '" + sYOP + "' and BRANCH like '"
+											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP + "' and BRANCH like '"
 													+ sbranch + "' and DEGREE like '%'";
 										}
 										if (sYOP != "" && sbranch != "" && sdegree != "") {
-											query = "Select * from profile where YEAROFPASSING like '" + sYOP + "' and BRANCH like '"
+											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP + "' and BRANCH like '"
 													+ sbranch + "' and DEGREE like '" + sdegree + "'";
 										}
 									}
@@ -198,14 +198,14 @@
 											out.print("Enter the values");
 										}
 										if (sskill == "" && scompany != "") {
-											query = "Select * from profile where SKILL like'%'and COMPANY like'" + scompany + "'";
+											query = "Select * from PROFILE where SKILL like'%'and COMPANY like'" + scompany + "'";
 										}
 
 										if (sskill != "" && scompany == "") {
-											query = "Select * from profile where SKILL like '" + sskill + "'and COMPANY like '%'";
+											query = "Select * from PROFILE where SKILL like '" + sskill + "'and COMPANY like '%'";
 										}
 										if (sskill != "" && scompany != "") {
-											query = "Select * from profile where SKILL like '" + sskill + "'and COMPANY like'"
+											query = "Select * from PROFILE where SKILL like '" + sskill + "'and COMPANY like'"
 													+ scompany + "'";
 										}
 									}
