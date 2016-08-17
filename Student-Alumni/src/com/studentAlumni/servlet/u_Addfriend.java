@@ -10,7 +10,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -52,7 +51,7 @@ public class u_Addfriend extends HttpServlet {
 		Connection con1 = null, con2 = null;
 		PreparedStatement ps = null;
 		ResultSet rs1 = null, rs2 = null;
-		Statement st1 = null, st2 = null;
+		PreparedStatement ps1 = null, ps2 = null;
 		try {
 
 			HttpSession s1 = request.getSession();
@@ -61,30 +60,32 @@ public class u_Addfriend extends HttpServlet {
 
 			if (from_grno != null && to_grno != null) {
 				con1 = DBUtils.getConnectionObj();
-				st1 = con1.createStatement();
-				String query1 = "Select * from FRIENDS where FROM_GRNO ='" + from_grno + "' and TO_GRNO='" + to_grno + "'";
-				rs1 = st1.executeQuery(query1);
-
+				ps1 = con1.prepareStatement(DBUtils.GET_FRIENDS_BY_GRNO);
+				ps1.setString(1, from_grno);
+				ps1.setString(2, to_grno);
+				rs1 = ps1.executeQuery();
+				
 				con2 = DBUtils.getConnectionObj();
-				st2 = con2.createStatement();
-				String query2 = "Select * from FRIENDS where FROM_GRNO ='" + to_grno + "' and TO_GRNO='" + from_grno + "'";
-				rs2 = st2.executeQuery(query2);
-
+				ps2 = con2.prepareStatement(DBUtils.GET_FRIENDS_BY_GRNO);
+				ps2.setString(1, to_grno);
+				ps2.setString(2, from_grno);
+				rs2 = ps2.executeQuery();
+				
 				if (rs1.next() || rs2.next()) {
-					RequestDispatcher rd = request.getRequestDispatcher("/Student-Alumni/User/Already_friend.html");
+					RequestDispatcher rd = request.getRequestDispatcher("/User/Already_friend.html");
 					rd.forward(request, response);
 				}
 
 				else {
 					if (!rs1.isClosed()) rs1.close();
 					if (!rs2.isClosed()) rs2.close();
-					if (!st1.isClosed()) st1.close();
-					if (!st2.isClosed()) st2.close();
+					if (!ps1.isClosed()) ps1.close();
+					if (!ps2.isClosed()) ps2.close();
 					if (!con1.isClosed()) con1.close();
 					if (!con2.isClosed()) con2.close();
 
 					con1 = DBUtils.getConnectionObj();
-					ps = con1.prepareStatement("Insert into FRIENDS (FROM_GRNO,TO_GRNO,STATUS) values(?,?,?)");
+					ps = con1.prepareStatement(DBUtils.INSERT_FRIENDS);
 
 					ps.setString(1, from_grno);
 					ps.setString(2, to_grno);
@@ -96,7 +97,7 @@ public class u_Addfriend extends HttpServlet {
 						out.write("<center>  <h3>You Need To Wait For The Conformation From The Other Side</h3></center>");
 						out.write("<center><h1>THANKS!!</h1></center>");
 					} else {
-						out.print("hello");
+						//out.print("hello");
 					}
 				}
 			}
@@ -110,8 +111,8 @@ public class u_Addfriend extends HttpServlet {
 			try {
 				if (!rs1.isClosed()) rs1.close();
 				if (!rs2.isClosed()) rs2.close();
-				if (!st1.isClosed()) st1.close();
-				if (!st2.isClosed()) st2.close();
+				if (!ps1.isClosed()) ps1.close();
+				if (!ps2.isClosed()) ps2.close();
 				if (!con1.isClosed()) con1.close();
 				if (!con2.isClosed()) con2.close();
 			} catch (Exception e) {

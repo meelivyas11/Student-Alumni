@@ -35,10 +35,11 @@
 				<td width="15%" height="85%">
 					<jsp:include page="user_options.jsp"></jsp:include>
 				</td>
-				<td width="85%" height="85%">
+				<td width="85%" height="85%" style="vertical-align: text-top;">
 					<form action="u_Suggestion">
 						<input type="hidden" name="sugg_grno" value="<%=grno%>" size="6" />
-						<table width="50%" align="center" class="C2">
+						<center class="AllTitles"><h2>Suggestion</h2></center>
+						<table width="50%" align="center" class="SuggestionTable">
 							<tr>
 								<td>First Name : </td><td> <input type="text" name="firstname" value="" size="20" /></td>
 							</tr>
@@ -50,7 +51,7 @@
 							</tr>
 							<tr>
 								<td></td>
-								<td><input type="submit" value="Give-Suggestion" name="Give-Suggestion" /></td>
+								<td><input type="submit" value="Submit" name="Submit" /></td>
 							</tr>
 						</table>
 					</form>
@@ -59,7 +60,7 @@
 		</table>
 	</div>
 
-	<div id="footer">
+	<div>
 		<br>
 		<jsp:include page="u_footer.jsp"></jsp:include>
 	</div>

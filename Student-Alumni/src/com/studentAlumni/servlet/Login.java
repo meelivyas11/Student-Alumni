@@ -67,6 +67,7 @@ public class Login extends HttpServlet {
 				status = rs.getString("status");
 				s1.setAttribute("userid", userid);
 				s1.setAttribute("grno", grno);
+				s1.setAttribute("role", role);
 
 				RequestDispatcher rd = null;
 				if (role.equals("Admin")) {

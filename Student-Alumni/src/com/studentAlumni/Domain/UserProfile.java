@@ -12,8 +12,8 @@ import com.studentAlumni.DataProvider.DBUtils;
 public class UserProfile {
 
    
-    public static profile retriveProfile(String grno) {
-        profile u1 = new profile();
+    public static Profile retriveProfile(String grno) {
+        Profile u1 = new Profile();
         Connection cn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -64,7 +64,7 @@ public class UserProfile {
         return null;
     }
 
-    public static boolean updateProfile(profile u1) {
+    public static boolean updateProfile(Profile u1) {
         Connection cn = null;
         ResultSet rs = null;
         PreparedStatement ps = null;

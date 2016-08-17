@@ -81,7 +81,7 @@
 
 								try {
 									con = DBUtils.getConnectionObj();
-									ps = con.prepareStatement(DBUtils.UPDATE_PROFILE);
+									ps = con.prepareStatement(DBUtils.UPDATE_PROFILE_PHOTO);
 									ps.setString(1, photo);
 									ps.setString(2, grno);
 									rs = ps.executeUpdate();

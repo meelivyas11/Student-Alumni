@@ -40,7 +40,7 @@
         String grno= (String) s1.getAttribute("grno");
 
         %>
-        <jsp:useBean id="u2" class="com.studentAlumni.Domain.profile"  scope="request">
+        <jsp:useBean id="u2" class="com.studentAlumni.Domain.Profile"  scope="request">
             <jsp:setProperty name="u2" property="*"/>
         </jsp:useBean>
         <%
@@ -57,7 +57,8 @@
         }
             %>
        <form action="/Student-Alumni/User/u_UpdateProfile.jsp">  
-       		<table class="table">
+       		<center class="AllTitles"><h2>My Profile</h2></center>
+       		<table class="Updatetable" cellpadding="3px" align="center">
        			<tr> 
        				<td>Select A Photo:</td>
        				<td>
@@ -181,12 +182,8 @@
        				<td>Salary</td>
        				<td><input type="text" name="salary"  size="20"value="<%=u1.getSalary()%>"  /></td>
        			</tr>
-       			
-       			<tr>
-       				<td></td>
-       				 <td align="center"><input type="submit" value="Update" name="Update"/></td>
-       			</tr>
        		</table>
+       		<center><input type="submit" value="Update" name="Update"/></center>
         </form>
       </td>
     </tr>

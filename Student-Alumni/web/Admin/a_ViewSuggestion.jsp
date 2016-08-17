@@ -67,11 +67,11 @@
 										String suggestion = rs.getString("SUGGESTION");
 										%>
 										<tr>
-											<td width="25%" class="C2">
+											<td width="25%" class="SuggestionTable">
 												Name : <c:out value="<%=FirstName%>" />.<c:out value="<%=LastName%>" /><br>
 												Grno. : <c:out value="<%=sugg_grno%>" /><br>
 											</td>
-											<td width="65%" class="C2"><%=suggestion%>
+											<td width="65%" class="SuggestionTable"><%=suggestion%>
 												<form action="a_DeleteSuggestion">
 													<center>
 														&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -87,7 +87,7 @@
 									if (flag == false) {
 									%>
 										<tr>
-										<td width="100%" class="C2">
+										<td width="100%" class="SuggestionTable">
 											<h2>CURRENTLY THERE ARE NO SUGGESTIONS</h2>
 											<h3>You Are Requested To Check This Every 24hrs</h3>
 											<h1>THANKS!!</h1>

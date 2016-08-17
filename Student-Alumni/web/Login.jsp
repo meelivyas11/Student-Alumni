@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>JSP Page</title>
+<title>Student-Alumni</title>
 <link rel="stylesheet" type="text/css"
 	href="/Student-Alumni/CSS/default.css" />
 

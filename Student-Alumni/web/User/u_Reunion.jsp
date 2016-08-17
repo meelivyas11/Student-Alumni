@@ -39,20 +39,20 @@
 				<td width="15%" height="100%">
 					<jsp:include page="user_options.jsp"></jsp:include>
 				</td>
-				<td width="85%" height="100%">
+				<td width="85%" height="100%" style="vertical-align: text-top;">
 					<%
 						DataSource ds = DBUtils.getOracleDataSource();
 						String query = DBUtils.GET_ALL_REUNION;
 					%> 
 					<sql:setDataSource var="db" dataSource="<%=ds%>" /> 
 						<sql:query var="query1" dataSource="${db}" sql="<%=query%>"> </sql:query> 
-					<center><h2>Reunion Details</h2></center>
-					<table width=60% border=3 align="center">
+					<center class="AllTitles"><h2>Reunion Details</h2></center>
+					<table width=60% border="1" align="center" cellpadding="5px" class="SuggestionTable">
 						<thead>
-							<tr>
-								<th>REUNION DATE</th>
-								<th>VENUE AND TIME</th>
-								<th>YEAR AND BRANCH</th>
+							<tr align="center">
+								<th>Reunion Date</th>
+								<th>Venue And Time</th>
+								<th>Year And Branch</th>
 							</tr>	
 						</thead>
 

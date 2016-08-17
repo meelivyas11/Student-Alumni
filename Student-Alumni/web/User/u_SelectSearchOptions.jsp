@@ -35,9 +35,10 @@
 			<tr>
 				<td width="20%" height="85%"><jsp:include
 						page="user_options.jsp"></jsp:include></td>
-				<td width="80%" height="85%">
+				<td width="80%" height="85%" style="vertical-align: text-top;">
 					<form action="u_EnterSearchValues.jsp">
-						<table align="center">
+						<center class="AllTitles"><h2>Select Search Criteria</h2></center>
+						<table align="center" class="SuggestionTable" cellpadding="5px">
 							<tr><td><input type="radio" name="ser" value="grno_userid" />Search By Grno. And/Or Userid </td></tr>
 							<tr><td><input type="radio" name="ser" value="name_email" />Search By Name And/Or Email-Address </td></tr>
 							<tr><td><input type="radio" name="ser" value="yop_branch_degree" />Search By Year Of Passing , Branch And/Or Degree </td></tr>

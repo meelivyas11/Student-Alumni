@@ -36,7 +36,7 @@
 					<jsp:include page="user_options.jsp"></jsp:include>
 				</td>
 				<td width="80%" height="85%">
-					<form action="u_SearchResult.jsp">
+					<form action="u_SearchResult.jsp" class="SuggestionTable">
 						<%
 							String str = request.getParameter("Search");
 							if (str != null && str.equals("Search")) {
@@ -49,7 +49,7 @@
 								<pre>
              						GrNo.           : <input type="text" name="sgrno" size="20" /><br>
              						Userid          : <input type="text" name="suserid" size="20" /><br>
-					                <center><input type="submit" value="grno_userid" name="grno_userid" /></center>
+					                <input type="submit" value="Submit" name="Submit" />
 								</pre>
 								<%
 								}
@@ -60,7 +60,7 @@
 								            First Name      : <input type="text" name="sfname" size="20" /><br>
 								            Last  Name      : <input type="text" name="slname" size="20" /><br>
 								            Email Address   : <input type="text" name="semail" size="20" /><br>
-								            <center><input type="submit" value="name_email" name="name_email" /></center>
+								            <center><input type="submit" value="Submit" name="Submit" /></center>
 										</pre>
 										<%
 								}
@@ -71,7 +71,7 @@
 								            Year Of Passing : <input type="text" name="sYOP" size="20" /><br>
 								            Branch          : <input type="text" name="sbranch" size="20" /><br>
 								            Degree          : <input type="text" name="sdegree" size="20" /><br>
-  						                    <center> <input type="submit" value="yop_branch_degree" name="yop_branch_degree" /> </center>
+  						                    <center> <input type="submit" value="Submit" name="Submit" /> </center>
 										</pre>
 										<%
 								}
@@ -81,7 +81,7 @@
 									<pre>
 							            Skill           : <input type="text" name="sskill" size="20" /><br>
 							            Company         : <input type="text" name="scompany" size="20" /><br>
-  					                    <center><input type="submit" value="current" name="current" /></center>
+  					                    <center><input type="submit" value="Submit" name="Submit" /></center>
 									</pre>
 									<%
 								}

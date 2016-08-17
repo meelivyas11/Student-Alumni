@@ -60,9 +60,8 @@
 	            rs.absolute(row);
 	            times = (Integer) s1.getAttribute("totalrows");
 		        %>
-		        <center><h2>My Messages</h2></center>
-         		<table border="6"align="center" cellpadding="5" class="scrap">
-	                <tr>
+		        <center class="AllTitles"><h2>My Messages</h2></center>
+         		<table cellpadding="5" align="center" class="scrap">
                     <%
                         while (rs.next()) {
                             String Sender_email = rs.getString("SEMAIL");
@@ -80,15 +79,15 @@
                                 String Photo = rs2.getString("PHOTO");
 			                    %>
 							    <tr>
-							      <td width="25%" class="C2" >
+							      <td width="25%" >
 							             <center><img align="center" src="<%=Photo%>" width="100" height="100" alt="<%=Sgrno%>"/></center>
 							                <center><c:out value="<%=FirstName%>" />.<c:out value="<%=LastName%>" /></center>
 							                <center><c:out value="<%=Sender_email%>" /></center>
 							      </td>
-							      <td width="55%" class="C2">
+							      <td width="55%">
 							         <%=Message%>
 							      </td>   
-							      <td width="55%" class="C2">
+							      <td width="10%">
 							            <form action="u_DeleteMessage" method="post">
 							          		<center>
 							          			<input type="hidden" name="Sgrno" value="<%= Sgrno%>">
@@ -97,7 +96,7 @@
 							              	</center>
 							             </form>
 								  </td>
-							      <td width="55%" class="C2">
+							      <td width="10%">
 							         	 <form  action="/Student-Alumni/User/u_ScrapReply.jsp">
 							            	<center>
 								              	<input type="hidden" name="Sgrno" value="<%= Sgrno%>">
@@ -114,7 +113,6 @@
                             if (!con2.isClosed()) con2.close();
                         }
                     %>
-                </tr>
             </table>
             <%
         	} 

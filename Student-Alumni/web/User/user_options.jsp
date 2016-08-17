@@ -70,7 +70,7 @@ Released   : 20071101
 									<td><img align="center" src="<%=photo%>" width="100" height="100" alt="<%=grno%>" /></td>
 								</tr>
 								<tr>
-									<td><a class="user_options" href="/Student-Alumni/User/photo.jsp">Change Photo</a></td>
+									<td><a class="user_options" href="/Student-Alumni/User/u_ChangePhoto.jsp">Change Photo</a></td>
 								</tr>
 							</table>
 							<br><br>

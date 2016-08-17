@@ -80,6 +80,34 @@ public class a_LoginTable_update {
     }
 
 
+    public static boolean activateUser(String grno) {
+    	Connection cn = null;
+        ResultSet rs = null;
+        PreparedStatement ps = null;
+        try {
+            cn = DBUtils.getConnectionObj();
+            ps = cn.prepareStatement(DBUtils.GET_LOGINTABLE_BY_GRNO, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ps.setString(1, grno);
+            rs = ps.executeQuery();
 
+            if (rs.next()) {
+                rs.updateString("STATUS", "ACTIVE");
+                rs.updateRow();
+                return true;
+            } else {
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        } finally {
+            try {
+                if (!rs.isClosed()) rs.close();
+                if (!ps.isClosed()) ps.close();
+                if (!cn.isClosed()) cn.close();
+            } catch (Exception e) {
+            }
+        }
+        return false;
+    }
 
 }

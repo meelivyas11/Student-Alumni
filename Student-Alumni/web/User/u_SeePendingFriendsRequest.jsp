@@ -50,8 +50,8 @@
 				</td>
 				
 				<td width="85%" height="85%" valign="top">
-					<center><h3>!!Your Friends Request!!</h3></center>
-					<table align="center" cellpadding="15">
+					<center class="AllTitles"><h2>!!Your Friends Request!!</h2></center>
+					<table align="center" cellpadding="15" class="FriendsListTable">
 						<%
 							Connection con = null, con2 = null;
 							PreparedStatement ps = null, ps2 = null;

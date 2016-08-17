@@ -21,20 +21,12 @@
     <servlet-class>com.studentAlumni.servlet.Login</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>req_reg</servlet-name>
-    <servlet-class>com.studentAlumni.servlet.req_reg</servlet-class>
-  </servlet>
-  <servlet>
     <servlet-name>a_DelStudentsOfCollege</servlet-name>
     <servlet-class>com.studentAlumni.servlet.a_DelStudentsOfCollege</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>a_DelActiveStudents</servlet-name>
     <servlet-class>com.studentAlumni.servlet.a_DelActiveStudents</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>User_Photo</servlet-name>
-    <servlet-class>.User_Photo</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>u_Addfriend</servlet-name>
@@ -73,20 +65,12 @@
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-    <servlet-name>req_reg</servlet-name>
-    <url-pattern>/req_reg</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
     <servlet-name>a_DelStudentsOfCollege</servlet-name>
     <url-pattern>/Admin/a_DelStudentsOfCollege</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>a_DelActiveStudents</servlet-name>
     <url-pattern>/Admin/a_DelActiveStudents</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>User_Photo</servlet-name>
-    <url-pattern>/User_Photo</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>u_Addfriend</servlet-name>
@@ -96,7 +80,7 @@
     <servlet-name>u_AcceptFriendsRequest</servlet-name>
     <url-pattern>/User/u_AcceptFriendsRequest</url-pattern>
   </servlet-mapping>
-   <servlet-mapping>
+  <servlet-mapping>
     <servlet-name>u_SendMessage</servlet-name>
     <url-pattern>/User/u_SendMessage</url-pattern>
   </servlet-mapping>

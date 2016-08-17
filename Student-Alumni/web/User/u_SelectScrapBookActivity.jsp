@@ -36,12 +36,12 @@
 				<td width="15%" height="85%">
 					<jsp:include page="user_options.jsp"></jsp:include>
 				</td>
-				<td width="85%" height="85%" valign="middle" align="center">
+				<td width="85%" height="85%" style="vertical-align: text-top; padding-top: 15px" align="center">
+					<center class="AllTitles"><h2>Select Your Activity</h2></center>
 					<table cellpadding="5" class="ScrapSelectTable">
 						<tr>
 							<td>
 								<form action="/Student-Alumni/User/u_SelectScrapBookActivity.jsp">
-										Select Your Activity <br><br> 
 										<input type="radio" name="Scrap" value="SendScrap" /> Send A Scrap<br> 
 										<input type="radio" name="Scrap" value="ViewScrap" /> View A Scrap<br><br>
 										<input type="submit" value="Continue" name="Continue" />

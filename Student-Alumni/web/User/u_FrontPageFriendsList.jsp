@@ -48,7 +48,7 @@
         try {
             int times;
             con = DBUtils.getConnectionObj();
-            ps = con.prepareStatement(DBUtils.GET_FRIENDS_FOR_GRNO,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
+            ps = con.prepareStatement(DBUtils.GET_ACTIVE_FRIENDS_FOR_GRNO,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
             ps.setString(1, grno);
             ps.setString(2, grno);
             if (temp == 0) {

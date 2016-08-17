@@ -9,7 +9,7 @@ package com.studentAlumni.Domain;
  *
  * @author Meeli Vyas
  */
-public class profile {
+public class Profile {
 
 
       private String grno;
@@ -33,7 +33,7 @@ public class profile {
       private String salary;
       private String photo;
 
-    public profile() {
+    public Profile() {
     }
 
     public String getMS() {

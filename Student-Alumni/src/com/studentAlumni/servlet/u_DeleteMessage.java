@@ -3,9 +3,8 @@ package com.studentAlumni.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -54,14 +53,16 @@ public class u_DeleteMessage extends HttpServlet {
 		String message = request.getParameter("Message");
 
 		Connection con = null;
-		Statement st = null;
+		PreparedStatement ps = null;
 		ResultSet rs = null;
 
 		try {
 			con = DBUtils.getConnectionObj();
-			st = con.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
-			String qry = "Select SEMAIL, SGRNO, REMAIL, RGRNO, MESSAGE  from SCRAP where SGRNO = '" + Sgrno + "' and RGRNO ='" + Rgrno + "' and MESSAGE = '"+ message +"' ";
-			rs = st.executeQuery(qry);
+			ps = con.prepareStatement(DBUtils.GET_SPECIFIC_SCRAP, ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_UPDATABLE);
+			ps.setString(1, Sgrno);
+			ps.setString(2, Rgrno);
+			ps.setString(3, message);
+			rs = ps.executeQuery();
 			if (rs.next()) {
 				rs.deleteRow();
 				s1.setAttribute("counter", 0);
@@ -74,14 +75,10 @@ public class u_DeleteMessage extends HttpServlet {
 			out.write(ex.toString());
 		}
 		finally {
-
 			try {
-				if (!rs.isClosed())
-					rs.close();
-				if (!st.isClosed())
-					st.close();
-				if (!con.isClosed())
-					con.close();
+				if (!rs.isClosed()) rs.close();
+				if (!ps.isClosed()) ps.close();
+				if (!con.isClosed()) con.close();
 			} catch (Exception e) {
 				log(e.getMessage());
 			}

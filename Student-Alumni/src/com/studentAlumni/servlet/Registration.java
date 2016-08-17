@@ -26,7 +26,7 @@ import com.studentAlumni.DataProvider.DBUtils;
  * @author Meeli Vyas
  */
 @SuppressWarnings("serial")
-public class req_reg extends HttpServlet {
+public class Registration extends HttpServlet {
 
 	/**
 	 * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -82,7 +82,7 @@ public class req_reg extends HttpServlet {
 					rd = request.getRequestDispatcher("/Admin/Success.html");
 				}
 				else if (Sender.equals("User")) {
-					rd = request.getRequestDispatcher("/Admin/request_pending_ack.html");
+					rd = request.getRequestDispatcher("/request_pending_ack.html");
 				}
 				rd.forward(request, response);
 
@@ -91,7 +91,7 @@ public class req_reg extends HttpServlet {
 			}
 		} catch (SQLException ex) {
 			out.print(ex.toString());
-			Logger.getLogger(req_reg.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (Exception e) {
 			out.print(e.getMessage());
 		} finally {
@@ -130,9 +130,9 @@ public class req_reg extends HttpServlet {
 		try {
 			processRequest(request, response);
 		} catch (NamingException ex) {
-			Logger.getLogger(req_reg.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (SQLException ex) {
-			Logger.getLogger(req_reg.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 
@@ -154,9 +154,9 @@ public class req_reg extends HttpServlet {
 		try {
 			processRequest(request, response);
 		} catch (NamingException ex) {
-			Logger.getLogger(req_reg.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
 		} catch (SQLException ex) {
-			Logger.getLogger(req_reg.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(Registration.class.getName()).log(Level.SEVERE, null, ex);
 		}
 	}
 

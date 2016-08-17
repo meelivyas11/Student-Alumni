@@ -40,9 +40,9 @@
 	<div id="middle">
 		<table border="10" width="100%">
 			<tr>
-				<td width="20%" height="85%" valign="top"><jsp:include
+				<td width="15%" height="85%" valign="top"><jsp:include
 						page="user_options.jsp"></jsp:include></td>
-				<td width="80%" height="85%" valign="top" align="left"><br>
+				<td width="85%" height="85%" valign="top" align="left"><br>
 					<%
 						HttpSession s1 = request.getSession();
 						PreparedStatement ps = null, ps2 = null;
@@ -76,8 +76,8 @@
 
 							while (rs.next() && times >= 0) {
 							%>
-								<center><h2>My Messages</h2></center>
-								<table border="6" align="center" cellpadding="5" class="scrap">
+								<center class="AllTitles"><h2>My Messages</h2></center>
+								<table align="center" cellpadding="5" class="scrap">
 									<%
 										for (j = 0; j < 3 && times >= 0 && flag == true; j++) {
 											temp = (Integer) s1.getAttribute("counter");
@@ -103,7 +103,7 @@
 													String Photo = rs2.getString("PHOTO");
 													%>
 													<tr align="center">
-														<td width="25%" class="C2">
+														<td width="25%">
 															<center>
 																<img align="center" src="<%=Photo%>" width="100" height="100" alt="<%=Sgrno%>" />
 															</center>
@@ -112,10 +112,10 @@
 															</center>
 															<center><c:out value="<%=Sender_email%>" /></center>
 														</td>
-														<td width="55%" class="C2">
+														<td width="55%">
 															<%=Message%>
 														</td>
-														<td width="10%" class="C2">	
+														<td width="10%">	
 															<form action="u_DeleteMessage" method="post">
 																<center>
 																	<input type="hidden" name="Sgrno" value="<%=Sgrno%>">
@@ -124,7 +124,7 @@
 																</center>
 															</form>
 														</td>
-														<td width="10%" class="C2">
+														<td width="10%">
 															<form action="/Student-Alumni/User/u_ScrapReply.jsp">
 																<center>
 																	<input	type="hidden" name="Sgrno" value="<%=Sgrno%>">

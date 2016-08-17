@@ -10,9 +10,11 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -113,15 +115,15 @@ public class Filter1 implements Filter {
             String grno = (String) session.getAttribute("grno");
             String role = (String) session.getAttribute("role");
 
-         /*   if (grno == null || grno.length() == 0) {
+            if (grno == null || grno.length() == 0) {
                 RequestDispatcher rd = req.getRequestDispatcher("/Login.jsp?message=AccessDenied");
                 rd.forward(req, response);
-            } else if (uri.contains("/Admin/") == true && role!=null && !role.equals("Admin")) {
+            } else if (uri.contains("/Admin/") == true && role!=null && !role.equalsIgnoreCase("Admin")) {
                 RequestDispatcher rd = req.getRequestDispatcher("/Login.jsp?message=AccessDenied");
                 rd.forward(req, response);
-            } else {*/
+            } else {
                 chain.doFilter(req, response);
-           // }
+            }
 	}
 	catch(Throwable t) {
 	    // If an exception is thrown somewhere down the filter chain,

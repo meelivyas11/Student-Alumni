@@ -53,18 +53,35 @@
 					 <%
 					 	StudentofCollege student = null;
 					 	student = a_UpdateStudentsOfCollege.OrgData(grno);
+					 	
+					 	String str = request.getParameter("Submit");
+				 		if (str != null && str.equals("Submit")) {
+
+				 			boolean status = a_UpdateStudentsOfCollege.update(student);
+				 			boolean status2 = a_LoginTable_update.activateUser(grno);
+						 	if (status && status2) {
+						 		out.print("Student Approved Sucessfully");
+						 	} 
+						 	else {
+						 		out.print("Failed to Approve Student!");
+						 	}
+					 	}
 					 %> 
-					 <pre>
+					 <form action="a_StudentsDetails.jsp" method="post">
+					 	<input type="hidden" name="grno" id="grno" value="<%=student.getGrno()%>">
+					 	<pre>
 						GrNo            : <%=student.getGrno()%><br>
 						First Name      : <%=student.getFirstname()%><br>
 						Last Name       : <%=student.getLastname()%><br>
 						Gender          : <%=student.getGender()%><br>
 						BirthDate       : <%=student.getBirthdate()%><br>
-						Addmission      : <%=student.getAddmission()%><br>
+						Admission      : <%=student.getAddmission()%><br>
 						Aggregate       : <%=student.getAggregate()%><br>
 						Year Of Passing : <%=student.getYearofPassing()%><br>
 						Branch          : <%=student.getBranch()%><br>
-		          </pre>
+						<input type="submit" value="Submit" name="Submit" />
+		       		   </pre>
+					 </form>
 		       </td>
 			</tr>
 		</table>

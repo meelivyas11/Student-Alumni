@@ -3,7 +3,9 @@ package com.studentAlumni.DataProvider;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import javax.sql.DataSource;
+
 import oracle.jdbc.pool.OracleDataSource;
 
 public class DBUtils {
@@ -18,16 +20,17 @@ public class DBUtils {
 	// LOGINTABLE
 	public static String LOGIN_CHK = "Select * from LOGINTABLE where USERID =? and PASSWORD = ?";
 	public static String INSERT_LOGINTABLE = "Insert into LOGINTABLE (USERID,PASSWORD,STATUS,GRNO,ROLE) values(?,?,?,?,?)";
-	public static String GET_ALL_LOGINTABLE = "select * from LOGINTABLE";
-	public static String GET_LOGINTABLE_BY_GRNO = "select USERID, PASSWORD, STATUS, GRNO, ROLE from LOGINTABLE where GRNO = ? ";
+	public static String GET_ALL_LOGINTABLE = "Select * from LOGINTABLE";
+	public static String GET_LOGINTABLE_BY_GRNO = "Select USERID, PASSWORD, STATUS, GRNO, ROLE from LOGINTABLE where GRNO = ? ";
 	public static String DELETE_LOGINTABLE_BY_GRNO = "Delete from LOGINTABLE where GRNO = ?";
 	public static String GET_PENDING_USERS = "Select * from LOGINTABLE where status = 'PENDING'";
 	
 	// PROFILE
 	public static String GET_PROFILE_FROM_GRNO = "select GRNO,USERID,FIRSTNAME,LASTNAME,ABOUTFAMILY,MARITUALSTATUS,EMAILADDRESS,HOME,OFFICE,MOBILE,FAX,CURRENTADDRESS,PERMANENTADDRESS,DEGREE,ORGANIZATION,JOBDETAIL,SPECIFICATIONS,CURRENTPROJECT,SKILL,COMPANY,SALARY,PHOTO from PROFILE where GRNO =?";
-	public static String UPDATE_PROFILE = "UPDATE PROFILE  SET PHOTO = ? WHERE GRNO =?";
+	public static String UPDATE_PROFILE_PHOTO = "UPDATE PROFILE  SET PHOTO = ? WHERE GRNO =?";
 	public static String GET_PROFILE_BY_EMAILADDRESS = "Select * from PROFILE where EMAILADDRESS= ?";
 	public static String GET_EMAILADDRESS_FROM_GRNO = "Select EMAILADDRESS from PROFILE where GRNO= ?";
+	//public static String SEARCH_PROFILE = "Select * from PROFILE where GRNO like ? and USERID like ? and FIRSTNAME like ? and LASTNAME like ? and EMAILADDRESS like ? and YEAROFPASSING like ? and BRANCH like ? and DEGREE like ? and SKILL like ? and COMPANY like ?"; 
 	
 	// STUDENTSDATA
 	public static String GET_ALL_STUDENTDATA = "select * from STUDENTSDATA";
@@ -46,13 +49,16 @@ public class DBUtils {
 	public static String GET_SPECIFIC_REUNION = "Select RDATE, VENUE, YEARBRANCH  from REUNION where RDATE=? and VENUE = ? and YEARBRANCH= ?";
 	
 	// FRIENDS
-	public static String GET_FRIENDS_FOR_GRNO = "Select FROM_GRNO,TO_GRNO from FRIENDS where (TO_GRNO=? or FROM_GRNO=?) and (STATUS='ACTIVE')";
+	public static String GET_ACTIVE_FRIENDS_FOR_GRNO = "Select FROM_GRNO,TO_GRNO from FRIENDS where (TO_GRNO=? or FROM_GRNO=?) and (STATUS='ACTIVE')";
 	public static String GET_PENDING_FRIENDS_REQ = "Select FROM_GRNO from FRIENDS where status='PENDING' and TO_GRNO = ?";
 	public static String UPDATE_STATUS_TO_ACTIVE = "UPDATE FRIENDS set STATUS='ACTIVE' where FROM_GRNO =? and TO_GRNO=?";
+	public static String GET_FRIENDS_BY_GRNO = "Select * from FRIENDS where FROM_GRNO =? and TO_GRNO= ?";
+	public static String INSERT_FRIENDS = "Insert into FRIENDS (FROM_GRNO,TO_GRNO,STATUS) values(?,?,?)";
 	
 	// SCRAP
 	public static String GET_SCRAP_BY_RGRNO = "Select * from SCRAP where RGRNO= ?";
 	public static String INSERT_SCRAP = "Insert into SCRAP (SEMAIL, SGRNO, REMAIL, RGRNO, MESSAGE) values(?,?,?,?,?)";
+	public static String GET_SPECIFIC_SCRAP = "Select SEMAIL, SGRNO, REMAIL, RGRNO, MESSAGE  from SCRAP where SGRNO = ? and RGRNO =? and MESSAGE = ? ";
 	
 	public static Statement getStatement() {
 		try {
@@ -100,6 +106,12 @@ public class DBUtils {
 			e.printStackTrace();
 			return null;
 		}
-		
+	}
+	
+	public static String setPercentIfInputNull(String inputVal) {
+		if(inputVal!=null && !inputVal.trim().equals(""))
+			return inputVal;
+		else
+			return "%";
 	}
 }

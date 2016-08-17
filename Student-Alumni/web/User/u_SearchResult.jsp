@@ -57,159 +57,22 @@
 
 								if (temp == 0) {
 									query = "";
-									String str = request.getParameter("grno_userid");
-									if (str != null && str.equals("grno_userid")) {
-										String sgrno = request.getParameter("sgrno");
-										String suserid = request.getParameter("suserid");
-
-										if (sgrno != "") sgrno.trim();
-										if (suserid != "") suserid.trim();
-
-										if (sgrno == "" && suserid == "") {
-											out.print("Enter the values");
-										}
-										if (sgrno == "" && suserid != "") {
-											query = "Select * from PROFILE where GRNO like'%'and USERID like'" + suserid + "'";
-										}
-
-										if (sgrno != "" && suserid == "") {
-											query = "Select * from PROFILE where GRNO like'" + sgrno + "'and USERID like '%'";
-										}
-										if (sgrno != "" && suserid != "") {
-											query = "Select * from PROFILE where GRNO like '" + sgrno + "'and USERID like '" + suserid 	+ "'";
-										}
-									}
-						
-									String str1 = request.getParameter("name_email");
-									if (str1 != null && str1.equals("name_email")) {
-										String sfname = request.getParameter("sfname");
-										String slname = request.getParameter("slname");
-										String semail = request.getParameter("semail");
-
-										if (sfname != "") {
-											sfname.trim();
-										}
-										if (slname != "") {
-											slname.trim();
-										}
-										if (semail != "") {
-											semail.trim();
-										}
-
-										if (sfname == "" && slname == "" && semail == "") {
-											out.print("Enter the values");
-										}
-										if (sfname == "" && slname == "" && semail != "") {
-											query = "Select * from PROFILE where FIRSTNAME like'%' and LASTNAME like '%' and EMAILADDRESS like '"
-													+ semail + "'";
-										}
-										if (sfname == "" && slname != "" && semail == "") {
-											query = "Select * from PROFILE where FIRSTNAME like'%' and LASTNAME like '" + slname
-													+ "' and EMAILADDRESS like '%'";
-										}
-										if (sfname == "" && slname != "" && semail != "") {
-											query = "Select * from PROFILE where FIRSTNAME like'%' and LASTNAME like '" + slname
-													+ "' and EMAILADDRESS like '" + semail + "'";
-										}
-
-										if (sfname != "" && slname == "" && semail == "") {
-											query = "Select * from PROFILE where FIRSTNAME like '" + sfname
-													+ "' and LASTNAME like '%' and EMAILADDRESS like '%'";
-										}
-										if (sfname != "" && slname == "" && semail != "") {
-											query = "Select * from PROFILE where FIRSTNAME like'" + sfname
-													+ "' and LASTNAME like '%' and EMAILADDRESS like '" + semail + "'";
-										}
-										if (sfname != "" && slname != "" && semail == "") {
-											query = "Select * from PROFILE where FIRSTNAME like'" + sfname + "' and LASTNAME like '"
-													+ slname + "' and EMAILADDRESS like '%'";
-										}
-										if (sfname != "" && slname != "" && semail != "") {
-											query = "Select * from PROFILE where FIRSTNAME like'" + sfname + "' and LASTNAME like '"
-													+ slname + "' and EMAILADDRESS like '" + semail + "'";
-										}
-
-									}
-						
-									String str2 = request.getParameter("yop_branch_degree");
-									if (str2 != null && str2.equals("yop_branch_degree")) {
-
-										String sYOP = request.getParameter("sYOP");
-										String sbranch = request.getParameter("sbranch");
-										String sdegree = request.getParameter("sdegree");
-
-										if (sYOP != "") {
-											sYOP.trim();
-										}
-										if (sbranch != "") {
-											sbranch.trim();
-										}
-										if (sdegree != "") {
-											sdegree.trim();
-										}
-
-										if (sYOP == "" && sbranch == "" && sdegree == "") {
-											out.print("Enter the values");
-										}
-										if (sYOP == "" && sbranch == "" && sdegree != "") {
-											query = "Select * from PROFILE where YEAROFPASSING like'%' and BRANCH like '%' and DEGREE like '"
-													+ sdegree + "'";
-										}
-										if (sYOP == "" && sbranch != "" && sdegree == "") {
-											query = "Select * from PROFILE where YEAROFPASSING like'%' and BRANCH like '" + sbranch
-													+ "' and DEGREE like '%'";
-										}
-										if (sYOP == "" && sbranch != "" && sdegree != "") {
-											query = "Select * from PROFILE where YEAROFPASSING like'%' and BRANCH like '" + sbranch
-													+ "' and DEGREE like '" + sdegree + "'";
-										}
-
-										if (sYOP != "" && sbranch == "" && sdegree == "") {
-											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP
-													+ "' and BRANCH like '%' and DEGREE like '%'";
-										}
-										if (sYOP != "" && sbranch == "" && sdegree != "") {
-											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP
-													+ "' and BRANCH like '%' and DEGREE like '" + sdegree + "'";
-										}
-										if (sYOP != "" && sbranch != "" && sdegree == "") {
-											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP + "' and BRANCH like '"
-													+ sbranch + "' and DEGREE like '%'";
-										}
-										if (sYOP != "" && sbranch != "" && sdegree != "") {
-											query = "Select * from PROFILE where YEAROFPASSING like '" + sYOP + "' and BRANCH like '"
-													+ sbranch + "' and DEGREE like '" + sdegree + "'";
-										}
-									}
-		
-									String str3 = request.getParameter("current");
-									if (str3 != null && str3.equals("current")) {
-										String sskill = request.getParameter("sskill");
-										String scompany = request.getParameter("scompany");
-
-										if (sskill != "") {
-											sskill.trim();
-										}
-										if (scompany != "") {
-											scompany.trim();
-										}
-
-										if (sskill == "" && scompany == "") {
-											out.print("Enter the values");
-										}
-										if (sskill == "" && scompany != "") {
-											query = "Select * from PROFILE where SKILL like'%'and COMPANY like'" + scompany + "'";
-										}
-
-										if (sskill != "" && scompany == "") {
-											query = "Select * from PROFILE where SKILL like '" + sskill + "'and COMPANY like '%'";
-										}
-										if (sskill != "" && scompany != "") {
-											query = "Select * from PROFILE where SKILL like '" + sskill + "'and COMPANY like'"
-													+ scompany + "'";
-										}
-									}
-
+									String sgrno = DBUtils.setPercentIfInputNull(request.getParameter("sgrno"));
+									String suserid = DBUtils.setPercentIfInputNull(request.getParameter("suserid"));
+									String sfname = DBUtils.setPercentIfInputNull(request.getParameter("sfname"));
+									String slname = DBUtils.setPercentIfInputNull(request.getParameter("slname"));
+									String semail = DBUtils.setPercentIfInputNull(request.getParameter("semail"));
+									String sYOP = DBUtils.setPercentIfInputNull(request.getParameter("sYOP"));
+									String sbranch = DBUtils.setPercentIfInputNull(request.getParameter("sbranch"));
+									String sdegree = DBUtils.setPercentIfInputNull(request.getParameter("sdegree"));
+									String sskill = DBUtils.setPercentIfInputNull(request.getParameter("sskill"));
+									String scompany = DBUtils.setPercentIfInputNull(request.getParameter("scompany"));
+									
+									query = "Select * from PROFILE where GRNO like '" + sgrno + "'and USERID like '" + suserid 	+ "'"
+											+ "and FIRSTNAME like'" + sfname + "' and LASTNAME like '" + slname + "' and EMAILADDRESS like '" + semail + "'"
+											+ "and YEAROFPASSING like '" + sYOP + "' and BRANCH like '" + sbranch + "' and DEGREE like '" + sdegree + "'"
+											+ "and SKILL like '" + sskill + "'and COMPANY like'" + scompany + "'";
+									
 									con = DBUtils.getConnectionObj();
 									st = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 									rs = st.executeQuery(query);
@@ -249,7 +112,7 @@
 										String Company = rs.getString("COMPANY");
 										%>
 
-										<table width=25% border=3 align="center">
+										<table width=25% border=1 align="center" class="SuggestionTable">
 											<tr><td>Grno : <c:out value="<%=grno%>" /></td></tr>
 											<tr><td>Userid : <c:out value="<%=Userid%>" /></td></tr>
 											<tr><td>First Name : <c:out value="<%=FristName%>" /></td></tr>
@@ -271,7 +134,7 @@
 										}
 									}
 
-									if (times >= 0) {
+									if (times > 0) {
 										int current_row_no = rs.getRow() - 1;
 										s1.setAttribute("current_row_no", current_row_no);
 										s1.setAttribute("counter", i);

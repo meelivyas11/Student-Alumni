@@ -19,18 +19,17 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="javax.servlet.RequestDispatcher" %>
 <%@page import="javax.naming.*"%>
 <%@page import="java.sql.*"%>
 <%@page import="javax.sql.*"%>
-
 <%@page import="com.studentAlumni.Domain.*"%>
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Amin</title>
-<link rel="stylesheet" type="text/css"
-	href="/Student-Alumni/CSS/common.css" />
+<link rel="stylesheet" type="text/css" href="/Student-Alumni/CSS/common.css" />
 </head>
 
 <body>
@@ -47,6 +46,7 @@
 				</td>
 				<td width="80%" height="85%">
 					<%
+					try {
 						StudentofCollege student = null;
 						String upgrno = request.getParameter("upgrno");
 						HttpSession s1 = request.getSession();
@@ -54,7 +54,6 @@
 					
 					 	String str = request.getParameter("Submit");
 					 	if (str != null && str.equals("Submit")) {
-					 		
 					 		%> 
 							
 							<jsp:useBean id="u2" class="com.studentAlumni.Domain.StudentofCollege" scope="request">
@@ -72,25 +71,37 @@
 					 		}
 					 	} else {
 					 		student = a_UpdateStudentsOfCollege.OrgData(upgrno);
-					 		
 					 	}
-					%>
-					<form action="a_UpdateStudentsOfCollege.jsp">
-
-						<pre>
-							GrNo            : <input type="text" name="grno" value="<%=student.getGrno()%>" size="20"/><br>
-							First Name      : <input type="text" name="firstname" value="<%=student.getFirstname()%>" size="20" /><br>
-							Last Name       : <input type="text" name="lastname" value="<%=student.getLastname()%>" size="20" /><br>
-							Gender          : <input type="text" name="gender" 	value="<%=student.getGender()%>" size="20" /><br>
-							BirthDate       : <input type="text" name="birthdate" value="<%=student.getBirthdate()%>" size="8" /><br>
-							Addmission      : <input type="text" name="addmission" value="<%=student.getAddmission()%>" size="8" /><br>
-							Aggregate       : <input type="text" name="aggregate" value="<%=student.getAggregate()%>" size="4" /><br>
-							Year Of Passing : <input type="text" name="yearofPassing" value="<%=student.getYearofPassing()%>" size="4" /><br>
-							Branch          : <input type="text" name="branch"	value="<%=student.getBranch()%>" size="20" /><br>
-
- 							<input type="submit" value="Submit" name="Submit" />
-  						</pre>
-					</form>
+					 	
+					 	if(student!=null) 
+					 	{
+							%>
+							<form action="a_UpdateStudentsOfCollege.jsp">
+								<pre>
+									GrNo            : <input type="text" name="grno" value="<%=student.getGrno()%>" size="20"/><br>
+									First Name      : <input type="text" name="firstname" value="<%=student.getFirstname()%>" size="20" /><br>
+									Last Name       : <input type="text" name="lastname" value="<%=student.getLastname()%>" size="20" /><br>
+									Gender          : <input type="text" name="gender" 	value="<%=student.getGender()%>" size="20" /><br>
+									BirthDate       : <input type="text" name="birthdate" value="<%=student.getBirthdate()%>" size="8" /><br>
+									Admission      : <input type="text" name="addmission" value="<%=student.getAddmission()%>" size="8" /><br>
+									Aggregate       : <input type="text" name="aggregate" value="<%=student.getAggregate()%>" size="4" /><br>
+									Year Of Passing : <input type="text" name="yearofPassing" value="<%=student.getYearofPassing()%>" size="4" /><br>
+									Branch          : <input type="text" name="branch"	value="<%=student.getBranch()%>" size="20" /><br>
+		 							<input type="submit" value="Submit" name="Submit" />
+		  						</pre>
+							</form>
+							<%
+					 	}
+					 	else
+					 	{
+					 		RequestDispatcher rd = request.getRequestDispatcher("/Admin/a_SeeStudentsOfCollege.jsp");
+					 		rd.forward(request, response);
+					 	}
+					}
+					catch(Exception ex){
+						out.print(ex);
+					}
+						%>
 				</td>
 			</tr>
 			</tbody>
