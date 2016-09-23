@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="oracle.jdbc.pool.OracleDataSource"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="javax.naming.Context"/>
+<fullyQualifiedTypeName name="oracle.net.aso.a"/>
+<fullyQualifiedTypeName name="java.beans.Statement"/>
+<fullyQualifiedTypeName name="javax.sql.DataSource"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="com.studentAlumni.DataProvider.DBUtils"/>
+<fullyQualifiedTypeName name="com.studentAlumni.Domain.registration"/>
+<fullyQualifiedTypeName name="com.studentAlumni.Domain.StudentofCollege"/>
+<fullyQualifiedTypeName name="com.studentAlumni.Domain.a_UpdateStudentsOfCollege"/>
+</qualifiedTypeNameHistroy>

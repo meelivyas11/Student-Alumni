@@ -1,0 +1,89 @@
+1470067069925	Copy compilation unit
+1470067081138	Delete element
+1470067113755	Move compilation unit
+1470067129329	Move compilation unit
+1470067141717	Move compilation unit
+1470067155971	Move compilation unit
+1470067173100	Move compilation unit
+1470067183946	Move compilation unit
+1470067196757	Move compilation unit
+1470067255445	Rename package 'SA'
+1470067295888	Move compilation unit
+1470067348103	Delete element
+1470067365191	Delete element
+1470067372111	Delete element
+1470067396579	Move compilation unit
+1470067410713	Move compilation unit
+1470067442777	Delete element
+1470067448228	Delete element
+1470067458862	Delete element
+1470067464512	Delete element
+1470067470697	Delete element
+1470067511364	Delete elements
+1470067520845	Move compilation unit
+1470067533161	Move compilation unit
+1470067544152	Delete element
+1470067556498	Delete element
+1470067567616	Delete element
+1470082213299	Rename resource 'ad_StuData_DB.jsp'
+1470082380565	Rename resource 'SeeStudentsOfCollege.jsp'
+1470083783025	Rename type 'ad_StuData_delete'
+1470150780202	Rename resource 'ad_Login_DB.jsp'
+1470151173119	Rename type 'ad_Login_delete'
+1470153615151	Rename resource 'a_SeeActiveStudent.jsp'
+1470153804690	Rename resource 'a_SeeStudentsOfCollege.jsp'
+1470156525184	Rename resource 'a_StuData_DB.jsp'
+1470156599613	Rename resource 'a_Login_DB.jsp'
+1470158360847	Rename resource 'a_StuData_update.jsp'
+1470158458995	Rename type 'a_StuData_update'
+1470172652058	Rename type 'StudenofCollege'
+1470230780333	Rename field 'Lastname'
+1470233588656	Rename field 'Gender'
+1470233622599	Rename field 'Birthdate'
+1470233653483	Rename field 'Addmission'
+1470233674206	Rename field 'Aggregate'
+1470233686533	Rename field 'YearofPassing'
+1470233694916	Rename field 'Branch'
+1470238038454	Rename resource 'a_Login_update.jsp.jsp'
+1470247694134	Rename resource 'admin_CPendingRequest.jsp'
+1470319998182	Rename resource 'ViewSugg.jsp'
+1470321166961	Rename type 'Scrap_del'
+1470321291784	Delete element
+1470321335929	Rename type 'Sugg_del'
+1470322404716	Rename resource 'a_Biodata.jsp'
+1470322784279	Rename resource 'ViewReunionEntry.jsp'
+1470322923035	Rename resource 'DeleteReunionEntry.jsp'
+1470322935019	Rename resource 'AddReunionEntry.jsp'
+1470323483713	Rename resource 'EditReunion.jsp'
+1470325762113	Rename type 'ReunionEntry'
+1470331038634	Rename type 'LogOut'
+1470331342875	Rename type 'DeleteReunion'
+1470332316441	Delete element
+1470332440807	Move 'Lfooter.jsp' to 'User'
+1470332505433	Move 'Lheader.jsp' to 'User'
+1470335101606	Copy file
+1470335116833	Delete element
+1470336601275	Copy file
+1470336605940	Delete element
+1470336640128	Rename resource 'Lhome.jsp'
+1470336845295	Rename resource 'Lheader.jsp'
+1470337063096	Rename resource 'Lfooter.jsp'
+1470338406178	Copy file
+1470338412108	Delete element
+1470338443074	Rename resource 'options.jsp'
+1470338504689	Rename resource 'admin_options.jsp'
+1470344438554	Rename resource 'Update_Profile.jsp'
+1470344625690	Rename resource 'Search_friend.jsp'
+1470344703651	Delete element
+1470344713026	Delete element
+1470344715734	Delete element
+1470344734968	Delete element
+1470344747521	Delete element
+1470344758542	Delete element
+1470344767125	Delete element
+1470411383144	Rename resource 'Front_pg_FriendsList.jsp'
+1470419886520	Copy file
+1470421251300	Rename type 'allow_friend'
+1470426529535	Rename resource 'friend_result.jsp'
+1470428081365	Rename resource 'Scrap_main.jsp'
+1470428189737	Rename resource 'SendScrap.jsp'

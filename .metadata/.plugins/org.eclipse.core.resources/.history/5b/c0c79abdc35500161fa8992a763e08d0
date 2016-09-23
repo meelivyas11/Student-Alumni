@@ -1,0 +1,18 @@
+package com.studentAlumni.DataProvider;
+
+import java.sql.Statement;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
+public class DBUtils {
+	public static Statement getStatementObj() {
+		InitialContext i1 = new InitialContext();
+        Context ct =(Context) i1.lookup("java:comp/env"); // this is the value of the resource reference
+        DataSource ds = (DataSource) ct.lookup("resource_ref1"); // of javax.sql
+        con = ds.getConnection();
+        st = con.createStatement();
+        
+	}
+}
