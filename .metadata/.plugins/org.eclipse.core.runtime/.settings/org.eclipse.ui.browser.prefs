@@ -1,4 +1,0 @@
-browser-choice=1
-browsers=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<web-browsers current\="0">\r\n<system/>\r\n<external location\="C\:\\Program Files\\Internet Explorer\\iexplore.exe" name\="Internet Explorer"/>\r\n</web-browsers>
-eclipse.preferences.version=1
-internalWebBrowserHistory=http\://localhost\:8080/Student-Alumni/req_reg?userid\=2&grno\=2&password\=aa&conform\=aa&status\=ACTIVE&role\=User&submit\=submit|*|http\://localhost\:8080/Student-Alumni/Admin/a_AddMember.jsp|*|http\://localhost\:8080/Student-Alumni/Login?userid\=1&password\=aa&Login\=Login|*|http\://localhost\:8080/Student-Alumni/|*|http\://localhost\:8080/Student-Alumni/Login.jsp|*|
