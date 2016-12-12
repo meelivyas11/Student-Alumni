@@ -21,8 +21,8 @@ This is a Web Application
 ## Database Setup
  - Using the Kitematic (Docker Toolbox) create a Oracle Container.
  - Use the Container details (system user credentials) to connect to the system user from SQL Developer
- - As a system user, run `Student-Alumni-DB` script in the repository to create STUDENTALUMNI schema and its tables
- - Update the port number in the connenction url (`ORACLE_DB_URL`) in your DBUtils.java file present at  `SGRSApp\src\main\java\sgrs\DataProvider` location inside `StudentGradeRecordingSystem` repository
+ - As a system user, run `StudentAlumni-DB` script in the repository to create STUDENTALUMNI schema and its tables
+ - Update the port number in the connenction url (`ORACLE_DB_URL`) in your DBUtils.java file present at  `SGRSApp\src\main\java\sgrs\DataProvider` location inside `StudentGradeRecordingSystem` repository. Also make sure the DB username and password are correct.
  - Clean and build the project again
 
 # How do I use it?
