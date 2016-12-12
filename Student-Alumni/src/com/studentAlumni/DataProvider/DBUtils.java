@@ -12,9 +12,9 @@ public class DBUtils {
 		
 	// Oracle DB Credentials
 	public static String ORACLE_DRIVER = "oracle.jdbc.OracleDriver";
-	public static String ORACLE_DB_URL = "jdbc:oracle:thin:@//localhost:1521/xe";
-	public static String ORACLE_DB_USERNAME = "StudentAlumni";
-	public static String ORACLE_DB_PASSWORD = "StudentAlumni";
+	public static String ORACLE_DB_URL = "jdbc:oracle:thin:@//localhost:32769/xe";
+	public static String ORACLE_DB_USERNAME = "STUDENTALUMNI";
+	public static String ORACLE_DB_PASSWORD = "STUDENTALUMNI";
 	
 	
 	// LOGINTABLE

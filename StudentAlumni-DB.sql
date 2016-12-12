@@ -1,13 +1,20 @@
+-- DROP USER STUDENTALUMNI CASCADE;
+-- For Oracle --
+/* Create a new User in Oracle SQL Developer */
+CREATE USER STUDENTALUMNI IDENTIFIED BY STUDENTALUMNI; -- (User_Name = STUDENTALUMNI and  Selected_Password = STUDENTALUMNI)
+GRANT CONNECT, RESOURCE TO STUDENTALUMNI;
+/* Create a new Connection with name STUDENTALUMNI */
+
 --------------------------------------------------------
 --  File created - Thursday-August-11-2016   
 --------------------------------------------------------
-DROP TABLE "STUDENTALUMNI"."FRIENDS" cascade constraints;
-DROP TABLE "STUDENTALUMNI"."LOGINTABLE" cascade constraints;
-DROP TABLE "STUDENTALUMNI"."PROFILE" cascade constraints;
-DROP TABLE "STUDENTALUMNI"."REUNION" cascade constraints;
-DROP TABLE "STUDENTALUMNI"."SCRAP" cascade constraints;
-DROP TABLE "STUDENTALUMNI"."STUDENTSDATA" cascade constraints;
-DROP TABLE "STUDENTALUMNI"."SUGGESTION" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."FRIENDS" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."LOGINTABLE" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."PROFILE" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."REUNION" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."SCRAP" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."STUDENTSDATA" cascade constraints;
+--DROP TABLE "STUDENTALUMNI"."SUGGESTION" cascade constraints;
 --------------------------------------------------------
 --  DDL for Table FRIENDS
 --------------------------------------------------------
